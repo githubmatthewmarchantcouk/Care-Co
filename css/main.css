@@ -1,0 +1,87 @@
+/* -------------------------------------------------
+   GLOBAL RESET / BASE
+-------------------------------------------------- */
+html, body {           /* 🔄 add height so 100vh works */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+nav {
+  background-color: #3a3a38;
+}
+
+body {
+  font-family: 'comfortaa', sans-serif;
+  background-color: #3a3a38;
+  text-align: right;
+}
+
+/* -------------------------------------------------
+   NAV BAR
+-------------------------------------------------- */
+nav ul {
+  position: fixed;     /* already fixed – now pin above images */
+  top: 0;              /* 🔄 ensure at very top */
+  width: 100%;
+  z-index: 1000;       /* 🔄 keeps it above fullscreen image */
+  text-align: right;
+  background: rgba(58, 58, 56, 1);
+  font-family: 'comfortaa', sans-serif;
+  font-size: 1.2em;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 30px;
+}
+
+nav ul li a {
+  color: #3a3a38;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  color: #3a3a38;
+}
+
+/* -------------------------------------------------
+   FULL-SCREEN IMAGE UTILITY
+-------------------------------------------------- */
+.fullscreen {          /* <img class="fullscreen" … > */
+  width: 100vw;        /* fill viewport width  */
+  height: 100vh;       /* fill viewport height */
+  object-fit: cover;   /* crop proportionally   */
+  display: block;
+}
+
+/* If you wrap each hero image in <section>, this makes
+   each one occupy a full “page” when scrolling */
+section {
+  height: 100vh;
+}
+
+/* -------------------------------------------------
+   EXISTING SECTIONS
+   (Only tweaks: give them full height and remove padding
+    that pushed content down) 
+-------------------------------------------------- */
+#welcome-section,
+#Callback,
+#VideoConf {
+  min-height: 100vh;   /* 🔄 */
+  padding-top: 0;      /* 🔄 remove old vertical offset */
+  line-height: 1.6;
+}
+
+/* -------------------------------------------------
+   CO-BROWSE STATUS COLORS (unchanged)
+-------------------------------------------------- */
+body.replica,
+body.replica.status-ready       { background-color: #EAEAEA; }
+body.replica.status-primary-disconnected { background-color: #f0ad4e; }
+body.replica.status-disconnected          { background-color: #d9534f; }
+body.replica .close            { border: 1px solid #000; color: #000; }
+body.replica .replica-title    { color: #000; }
+body.popup .window             { border: 3px solid #134C75; }
+body.popup .window-header      { background-color: #e87415; }
